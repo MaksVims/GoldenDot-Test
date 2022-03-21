@@ -1,0 +1,237 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  border: none;
+  outline: none;
+  background-color: transparent;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.site-container {
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 400px;
+  padding: 10px 20px;
+  margin: 0 auto;
+  padding-top: 40px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.currency > span {
+  display: inline-block;
+  text-align: center;
+  width: 100px;
+}
+
+.currency__icon {
+  text-align: left !important;
+  max-width: 50px;
+}
+
+.currency {
+  padding: 10px 0px;
+  border: 1px solid transparent;
+  transition: border .2s;
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  border-radius: 4px;
+}
+
+.currency:hover {
+  transition: border .2s;
+  border-color: rgb(36, 35, 35);
+}
+
+.currencies-list,
+.currency-history__list {
+  margin-bottom: 30px;
+}
+
+.currencies-list__item,
+.currency-history__item {
+  margin-bottom: 10px;
+}
+
+.currencies-list__item:last-child,
+.currency-history__item:last-child {
+  margin-bottom: 0;
+}
+
+/* Tooltip */
+
+.tooltip {
+  position: absolute;
+  background-color: rgb(252, 252, 252);
+  border: 1px solid black;
+  font-size: 12px;
+  border-radius: 4px;
+  padding: 3px;
+  z-index: 1;
+  display: none;
+  text-align: center;
+  max-width: 150px;
+}
+
+.tooltip-visible {
+  display: block;
+}
+
+/* Loader */
+
+.loader {
+  flex: 1;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.lds-dual-ring {
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+}
+
+.lds-dual-ring:after {
+  content: " ";
+  display: block;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border-radius: 50%;
+  border: 6px solid rgb(0, 0, 0);
+  border-color: rgb(3, 3, 3) transparent rgb(2, 2, 2) transparent;
+  animation: lds-dual-ring 1.2s linear infinite;
+}
+
+@keyframes lds-dual-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* other */
+
+.btn-back {
+  border: 1px solid black;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  cursor: pointer;
+  border-radius: 6px;
+  padding: 6px;
+  transition: color .3s, background-color .3s;
+}
+
+.btn-back:hover {
+  color: #fff;
+  background-color: #000;
+  transition: color .3s, background-color .3s;
+}
+
+/* Page Currency History */
+
+.currencyPage__container {
+  max-width: 600px;
+}
+
+
+.currency-history__title {
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.currency-history__item {
+  padding: 10px 10px;
+  cursor: auto;
+  border: none;
+}
+
+.currency-history__item:hover {
+  border: none;
+}
+
+/* error */
+
+.error {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.error-text {
+  color: red;
+  font-size: 24px;
+  text-align: center;
+}
+
+/* media */
+
+@media (max-width: 640px) {
+
+  .container {
+    padding: 10px;
+  }
+
+  .title {
+    font-size: 24px;
+  }
+
+  .currencyPage__container {
+    padding-top: 70px;
+  }
+
+  .currency-history__title {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+
+  .error-text {
+    font-size: 18px;
+  } 
+}
